@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>购物车</title>
+		<style>
+		div{
+			display:inline-block;
+			width:150px;
+			height:200px;
+		}
+		
+		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			function addCart(id){
+				$.ajax({
+				   type: "POST",
+				   url: "addCart",
+				   data: "id="+id,
+				   success: function(msg){
+					 
+				   }
+				}); 
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="images/1.jpg" title="1001"><a href="javascript:addCart('1001')">加入购物车</a>
+		</div>
+		<div>
+			<img src="images/2.jpg" title="1002"><a href="javascript:addCart('1002')">加入购物车</a>
+		</div>
+		<div>
+			<img src="images/11.jpg" title="1003"><a href="javascript:addCart('1003')">加入购物车</a>
+		</div>
+		<a href="showCart">查看购物车</a>
+	</body>
+</html>
